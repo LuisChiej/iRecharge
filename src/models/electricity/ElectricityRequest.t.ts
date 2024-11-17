@@ -37,10 +37,15 @@ export enum Disco {
     Eko_Prepaid = 'Eko_Prepaid',
     Eko_Postpaid = 'Eko_Postpaid',
     Ibadan_Disco_Prepaid = 'Ibadan_Disco_Prepaid',
+    Ibadan_Disco_Postpaid = 'Ibadan_Disco_Postpaid',
+    Jos_Disco = 'Jos_Disco',
+    Jos_Disco_Postpaid = 'Jos_Disco_Postpaid',
     Kano_Electricity_Disco = 'Kano_Electricity_Disco',
+    Kano_Electricity_Disco_Postpaid = 'Kano_Electricity_Disco_Postpaid',
     Kaduna_Electricity_Disco = 'Kaduna_Electricity_Disco',
     Kaduna_Electricity_Disco_Postpaid = 'Kaduna_Electricity_Disco_Postpaid',
     PhED_Electricity = 'PhED_Electricity',
+    PH_Disco = 'PH_Disco',
     Enugu_Electricity_Distribution_Prepaid = 'Enugu_Electricity_Distribution_Prepaid',
     Enugu_Electricity_Distribution_Postpaid = 'Enugu_Electricity_Distribution_Postpaid',
     Aba_Power_Prepaid = 'Aba_Power_Prepaid',
@@ -62,22 +67,27 @@ export const DiscoMap = {
     },
     [DiscoII.IbadanElectric]: {
         'prepaid': Disco.Ibadan_Disco_Prepaid,
+        'postpaid': Disco.Ibadan_Disco_Postpaid,
     },
     [DiscoII.IkejaElectric]: {
         'prepaid': Disco.Ikeja_Token_Purchase,
         'postpaid': Disco.Ikeja_Electric_Bill_Payment
     },
-    [DiscoII.JosElectric]: null,
+    [DiscoII.JosElectric]: {
+        'prepaid': Disco.Jos_Disco,
+        'postpaid': Disco.Jos_Disco_Postpaid
+    },
     [DiscoII.KadunaElectric]: {
         'prepaid': Disco.Kaduna_Electricity_Disco,
         'postpaid': Disco.Kaduna_Electricity_Disco_Postpaid
     },
     [DiscoII.KedcoElectric]: {
-
+        'prepaid': Disco.Kano_Electricity_Disco,
+        'postpaid': Disco.Kano_Electricity_Disco_Postpaid,
     },
     [DiscoII.PortharcourtElectric]: {
         'prepaid': Disco.PhED_Electricity,
-        'postpaid': Disco.PhED_Electricity
+        'postpaid': Disco.PH_Disco
     },
     [DiscoII.BeninElectric]: {
         'prepaid': Disco.BEDC,

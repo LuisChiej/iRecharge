@@ -22,10 +22,15 @@ export declare enum Disco {
     Eko_Prepaid = "Eko_Prepaid",
     Eko_Postpaid = "Eko_Postpaid",
     Ibadan_Disco_Prepaid = "Ibadan_Disco_Prepaid",
+    Ibadan_Disco_Postpaid = "Ibadan_Disco_Postpaid",
+    Jos_Disco = "Jos_Disco",
+    Jos_Disco_Postpaid = "Jos_Disco_Postpaid",
     Kano_Electricity_Disco = "Kano_Electricity_Disco",
+    Kano_Electricity_Disco_Postpaid = "Kano_Electricity_Disco_Postpaid",
     Kaduna_Electricity_Disco = "Kaduna_Electricity_Disco",
     Kaduna_Electricity_Disco_Postpaid = "Kaduna_Electricity_Disco_Postpaid",
     PhED_Electricity = "PhED_Electricity",
+    PH_Disco = "PH_Disco",
     Enugu_Electricity_Distribution_Prepaid = "Enugu_Electricity_Distribution_Prepaid",
     Enugu_Electricity_Distribution_Postpaid = "Enugu_Electricity_Distribution_Postpaid",
     Aba_Power_Prepaid = "Aba_Power_Prepaid",
@@ -46,17 +51,24 @@ export declare const DiscoMap: {
     };
     ibadan_electric: {
         prepaid: Disco;
+        postpaid: Disco;
     };
     ikeja_electric: {
         prepaid: Disco;
         postpaid: Disco;
     };
-    jos_electric: null;
+    jos_electric: {
+        prepaid: Disco;
+        postpaid: Disco;
+    };
     kaduna_electric: {
         prepaid: Disco;
         postpaid: Disco;
     };
-    kedco_electric: {};
+    kedco_electric: {
+        prepaid: Disco;
+        postpaid: Disco;
+    };
     portharcourt_electric: {
         prepaid: Disco;
         postpaid: Disco;
