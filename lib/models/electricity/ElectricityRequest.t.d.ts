@@ -10,7 +10,7 @@ export type ElectricityRequest = {
     hash: string;
     response_format: 'json';
 };
-declare enum Disco {
+export declare enum Disco {
     AEDC = "AEDC",
     AEDC_Postpaid = "AEDC_Postpaid",
     YEDC = "YEDC",
@@ -31,4 +31,42 @@ declare enum Disco {
     Aba_Power_Prepaid = "Aba_Power_Prepaid",
     Aba_Power_Postpaid = "Aba_Power_Postpaid"
 }
-export {};
+export declare const DiscoMap: {
+    abuja_electric: {
+        prepaid: Disco;
+        postpaid: Disco;
+    };
+    eko_electric: {
+        prepaid: Disco;
+        postpaid: Disco;
+    };
+    enugu_electric: {
+        prepaid: Disco;
+        postpaid: Disco;
+    };
+    ibadan_electric: {
+        prepaid: Disco;
+    };
+    ikeja_electric: {
+        prepaid: Disco;
+        postpaid: Disco;
+    };
+    jos_electric: null;
+    kaduna_electric: {
+        prepaid: Disco;
+        postpaid: Disco;
+    };
+    kedco_electric: {};
+    portharcourt_electric: {
+        prepaid: Disco;
+        postpaid: Disco;
+    };
+    benin_electric: {
+        prepaid: Disco;
+        postpaid: Disco;
+    };
+    yenagoa_electric: {
+        prepaid: Disco;
+        postpaid: Disco;
+    };
+};

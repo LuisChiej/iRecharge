@@ -11,7 +11,21 @@ export type ElectricityRequest = {
     response_format: 'json';
 }
 
-enum Disco {
+enum DiscoII {
+    AbujaElectric = 'abuja_electric',
+    EkoElectric = 'eko_electric',
+    EnuguElectric = 'enugu_electric',
+    IbadanElectric = 'ibadan_electric',
+    IkejaElectric = 'ikeja_electric',
+    JosElectric = 'jos_electric',
+    KadunaElectric = 'kaduna_electric',
+    KedcoElectric = 'kedco_electric',
+    PortharcourtElectric = 'portharcourt_electric',
+    BeninElectric = 'benin_electric',
+    YenagoaElectric = 'yenagoa_electric'
+}
+
+export enum Disco {
     AEDC = 'AEDC',
     AEDC_Postpaid = 'AEDC_Postpaid',
     YEDC = 'YEDC',
@@ -31,4 +45,46 @@ enum Disco {
     Enugu_Electricity_Distribution_Postpaid = 'Enugu_Electricity_Distribution_Postpaid',
     Aba_Power_Prepaid = 'Aba_Power_Prepaid',
     Aba_Power_Postpaid = 'Aba_Power_Postpaid'
+}
+
+export const DiscoMap = {
+    [DiscoII.AbujaElectric]: {
+        'prepaid': Disco.AEDC,
+        'postpaid': Disco.AEDC_Postpaid
+    },
+    [DiscoII.EkoElectric]: {
+        'prepaid': Disco.Eko_Prepaid,
+        'postpaid': Disco.Eko_Postpaid
+    },
+    [DiscoII.EnuguElectric]: {
+        'prepaid': Disco.Enugu_Electricity_Distribution_Prepaid,
+        'postpaid': Disco.Enugu_Electricity_Distribution_Postpaid
+    },
+    [DiscoII.IbadanElectric]: {
+        'prepaid': Disco.Ibadan_Disco_Prepaid,
+    },
+    [DiscoII.IkejaElectric]: {
+        'prepaid': Disco.Ikeja_Token_Purchase,
+        'postpaid': Disco.Ikeja_Electric_Bill_Payment
+    },
+    [DiscoII.JosElectric]: null,
+    [DiscoII.KadunaElectric]: {
+        'prepaid': Disco.Kaduna_Electricity_Disco,
+        'postpaid': Disco.Kaduna_Electricity_Disco_Postpaid
+    },
+    [DiscoII.KedcoElectric]: {
+
+    },
+    [DiscoII.PortharcourtElectric]: {
+        'prepaid': Disco.PhED_Electricity,
+        'postpaid': Disco.PhED_Electricity
+    },
+    [DiscoII.BeninElectric]: {
+        'prepaid': Disco.BEDC,
+        'postpaid': Disco.BEDC_Postpaid
+    },
+    [DiscoII.YenagoaElectric]: {
+        'prepaid': Disco.YEDC,
+        'postpaid': Disco.YEDC_Postpaid
+    }
 }
