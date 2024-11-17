@@ -1,11 +1,12 @@
 import axios, { AxiosInstance } from "axios";
 import ElectricityService from "./services/electricity.service";
+export { DiscoMap } from "./models/electricity/ElectricityRequest.t";
 
 export default class IRecharge {
-    private _publicKey: string;
-    private _privateKey: string;
-    private _vendorCode: string;
-    private _axios: AxiosInstance;
+    private readonly _publicKey: string;
+    private readonly _privateKey: string;
+    private readonly _vendorCode: string;
+    private readonly _axios: AxiosInstance;
 
     public electricity: ElectricityService;
 
