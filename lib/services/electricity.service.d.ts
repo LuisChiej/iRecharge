@@ -4,6 +4,6 @@ import { ElectricityPurchaseResponse, GetMeterInfoResponse } from "../models/ele
 export default class ElectricityService {
     #private;
     constructor(iRecharge: IRecharge, vendorCode: string, publicKey: string, privateKey: string);
-    getMeterInfo(request: ElectricityRequest): Promise<GetMeterInfoResponse | null>;
-    buy(request: ElectricityRequest): Promise<ElectricityPurchaseResponse | null>;
+    getMeterInfo(request: Pick<ElectricityRequest, 'meter' | 'referenceId' | 'disco' | 'response_format'>): Promise<GetMeterInfoResponse | null>;
+    buy(request: Pick<ElectricityRequest, 'meter' | 'referenceId' | 'disco' | 'accessToken' | 'amount' | 'email' | 'phone' | 'response_format'>): Promise<ElectricityPurchaseResponse | null>;
 }

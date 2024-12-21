@@ -4,10 +4,10 @@ import { ElectricityPurchaseResponse, GetMeterInfoResponse } from "../models/ele
 import hmac from "../utils/hmac";
 
 export default class ElectricityService {
-    #iRecharge: IRecharge;
-    #vendorCode: string;
-    #publicKey: string;
-    #privateKey: string;
+    readonly #iRecharge: IRecharge;
+    readonly #vendorCode: string;
+    readonly #publicKey: string;
+    readonly #privateKey: string;
 
     constructor(iRecharge: IRecharge, vendorCode: string, publicKey: string, privateKey: string) {
         this.#iRecharge = iRecharge;
@@ -16,7 +16,7 @@ export default class ElectricityService {
         this.#privateKey = privateKey;
     }
 
-    async getMeterInfo(request: ElectricityRequest): Promise<GetMeterInfoResponse | null> {
+    async getMeterInfo(request: Pick<ElectricityRequest, 'meter' | 'referenceId' | 'disco' | 'response_format'>): Promise<GetMeterInfoResponse | null> {
         const { meter, referenceId, disco, response_format } = request;
         const hash = hmac([this.#vendorCode, referenceId, meter, disco.valueOf(), this.#publicKey], this.#privateKey);
 
@@ -40,7 +40,7 @@ export default class ElectricityService {
         }
     }
 
-    async buy(request: ElectricityRequest): Promise<ElectricityPurchaseResponse | null> {
+    async buy(request: Pick<ElectricityRequest, 'meter' | 'referenceId' | 'disco' | 'accessToken' | 'amount' | 'email' | 'phone' | 'response_format'>): Promise<ElectricityPurchaseResponse | null> {
         const { meter, referenceId, disco, accessToken, amount, phone, email, response_format } = request;
 
         const hash = hmac([this.#vendorCode, referenceId, meter, disco.valueOf(), String(amount), String(accessToken), this.#publicKey], this.#privateKey);
