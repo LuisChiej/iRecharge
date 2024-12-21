@@ -1,6 +1,6 @@
 {
   "name": "irecharge",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "API for iRecharge",
   "main": "index.js",
   "author": "LuisChiej",
