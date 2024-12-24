@@ -18,7 +18,7 @@ export default class ElectricityService {
 
     async getMeterInfo(request: Pick<ElectricityRequest, 'meter' | 'referenceId' | 'disco' | 'response_format'>): Promise<GetMeterInfoResponse | null> {
         const { meter, referenceId, disco, response_format } = request;
-        const hash = hmac([this.#vendorCode, referenceId, meter, disco.valueOf(), this.#publicKey], this.#privateKey);
+        const hash = hmac([this.#vendorCode, referenceId.toString(), meter, disco.valueOf(), this.#publicKey], this.#privateKey);
 
         try {
             const response = await this.#iRecharge.axios.get('/get_meter_info.php', {
@@ -43,7 +43,7 @@ export default class ElectricityService {
     async buy(request: Pick<ElectricityRequest, 'meter' | 'referenceId' | 'disco' | 'accessToken' | 'amount' | 'email' | 'phone' | 'response_format'>): Promise<ElectricityPurchaseResponse | null> {
         const { meter, referenceId, disco, accessToken, amount, phone, email, response_format } = request;
 
-        const hash = hmac([this.#vendorCode, referenceId, meter, disco.valueOf(), String(amount), String(accessToken), this.#publicKey], this.#privateKey);
+        const hash = hmac([this.#vendorCode, referenceId.toString(), meter, disco.valueOf(), String(amount), String(accessToken), this.#publicKey], this.#privateKey);
 
         try {
             const response = await this.#iRecharge.axios.get('/vend_power.php', {
