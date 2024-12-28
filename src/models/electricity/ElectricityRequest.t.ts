@@ -1,7 +1,7 @@
 export type ElectricityRequest = {
     vendorCode: string;
     meter: string;
-    referenceId: number; // 12 digits
+    referenceId: string; // 12 digits
     disco: Disco;
     accessToken: number;
     amount: number;
