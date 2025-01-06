@@ -31,7 +31,8 @@ export default class ElectricityService {
                     hash: hash
                 }
             });
-
+            
+            console.log(response);
             if(response.status === 200) return response.data;
             return null;
         } catch (e) {
@@ -59,7 +60,9 @@ export default class ElectricityService {
                     hash: hash,
                     response_format: response_format
                 }
-            })
+            });
+
+            console.log(response);
 
             if(response.status === 200) return response.data;
             return null;
