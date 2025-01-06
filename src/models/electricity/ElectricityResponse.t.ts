@@ -18,6 +18,6 @@ export type ElectricityPurchaseResponse = {
 } & Response
 
 export type GetMeterInfoResponse = {
-    accessToken: string;
+    access_token: string;
     customer: Customer;
 } & Response

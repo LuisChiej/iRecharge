@@ -16,6 +16,6 @@ export type ElectricityPurchaseResponse = {
     disco_ref: string;
 } & Response;
 export type GetMeterInfoResponse = {
-    accessToken: string;
+    access_token: string;
     customer: Customer;
 } & Response;

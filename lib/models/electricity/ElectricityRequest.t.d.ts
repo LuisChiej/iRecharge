@@ -3,7 +3,7 @@ export type ElectricityRequest = {
     meter: string;
     referenceId: string;
     disco: Disco;
-    accessToken: number;
+    accessToken: string;
     amount: number;
     phone: string;
     email: string;

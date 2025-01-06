@@ -6,6 +6,8 @@ export type Customer = {
     util: string;
     minimumAmount: string;
     isMd: IBoolean;
+    totalDebt?: string;
     isFranchise: IBoolean;
+    tariff?: string;
     provider: string;
 }
